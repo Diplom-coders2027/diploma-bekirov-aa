@@ -1,0 +1,5 @@
+Flask
+Flask-SQLAlchemy
+argon2-cffi
+flask-login
+python-dotenv
