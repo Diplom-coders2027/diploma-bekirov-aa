@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Регистрация</title></head>
+<body>
+    <h2>Регистрация в Dota Tinder</h2>
+    
+    <!-- Вывод сообщений об ошибках или успехе -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <p style="color: {% if category == 'error' %}red{% else %}green{% endif %};"><b>{{ message }}</b></p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <p>Никнейм: <input type="text" name="nickname" required></p>
+        <p>Email: <input type="email" name="email" required></p>
+        <p>Пароль: <input type="password" name="password" required></p>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+    <br>
+    <a href="/login">Уже есть аккаунт? Войти</a>
+</body>
+</html>
